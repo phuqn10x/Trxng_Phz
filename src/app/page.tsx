@@ -16,9 +16,11 @@ import {
 import Image from "next/image";
 import styles from "./page.module.css";
 import { format } from 'path';
-
+import Section from './components/section'
+import Layout from './components/layouts/article'
 const Home = () => (
-    <Container>
+    <Layout>
+ <Container>
         <Box
             borderRadius="lg"
             mb={6}
@@ -43,20 +45,29 @@ const Home = () => (
                 ml={{ md: 6}}
                 textAlign="center"
             >
-                
-                    <Avatar
-                        borderColor={"whiteAlpha.800"}
-                        borderWidth={2}
-                        borderStyle={"solid"}
-                        size='xl'
-                        src="/images/me_and_gf.jpg"
-                        name="Profle image"
-                       
-                    />
-                
+                <Avatar
+                    borderColor={"whiteAlpha.800"}
+                    borderWidth={2}
+                    borderStyle={"solid"}
+                    size='xl'
+                    src="/images/me_and_gf.jpg"
+                    name="Profle image"
+                />
             </Box>
         </Box>
+
+        <Section delay={0.1}>
+            <Heading as="h3" variant="section-title">
+                Work
+            </Heading>
+            {/* <Paragrah>
+                Trong Phu is a front-end developer and a designer based in hanoi with a
+                passion for building digital services/stuff he wants. but he didn't do anything
+            </Paragrah> */}
+        </Section>
     </Container>
+    </Layout>
+   
 );
 
 export default Home
