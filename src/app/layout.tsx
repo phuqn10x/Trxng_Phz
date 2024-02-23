@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Jaldi } from "next/font/google";
 import "./globals.css";
-import Layout from "../../components/layouts/article"
-const inter = Jaldi({ subsets: ['devanagari'] , weight : ['400']});
+import { Providers } from './providers'
+// const inter = Jaldi({ subsets: ['devanagari'] , weight : ['400']});
 
 export const metadata: Metadata = {
   title: "My portfolio",
@@ -12,10 +12,9 @@ export const metadata: Metadata = {
 function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="en">
-      <Layout>
-          {children}
-      </Layout>
-      {/* <body className={inter.className}>{children}</body> */}
+      <body >
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
