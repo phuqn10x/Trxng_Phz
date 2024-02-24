@@ -35,7 +35,7 @@ const Main = ({ children, router}:Props) => {
                 <title>Trong Phu - Homepage</title>
             </Head>
 
-            {/* <NavBar path={router.asPath} /> */}
+            <NavBar path={router.asPath} />
 
             <Container maxW="container.md" pt={14}>
                 {/* <LazyVoxelDog/> */}

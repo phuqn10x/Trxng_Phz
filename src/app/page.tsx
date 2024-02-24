@@ -13,6 +13,7 @@ import {
     useColorModeValue,
     Avatar
 } from '@chakra-ui/react'
+import Paragraph from './components/Paragraph'
 import Image from "next/image";
 import styles from "./page.module.css";
 import { format } from 'path';
@@ -60,14 +61,13 @@ const Home = () => (
             <Heading as="h3" variant="section-title">
                 Work
             </Heading>
-            {/* <Paragrah>
+            <Paragraph>
                 Trong Phu is a front-end developer and a designer based in hanoi with a
                 passion for building digital services/stuff he wants. but he didn't do anything
-            </Paragrah> */}
+            </Paragraph>
         </Section>
     </Container>
     </Layout>
-   
 );
 
 export default Home

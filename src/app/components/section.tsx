@@ -1,5 +1,5 @@
 
-import { motion } from 'framer-motion'
+import { delay, motion } from 'framer-motion'
 import { chakra, shouldForwardProp } from '@chakra-ui/react'
 
 const StyleDiv = chakra(motion.div, {
@@ -10,13 +10,13 @@ const StyleDiv = chakra(motion.div, {
 
 interface Props{
     children : React.ReactNode
-    delay: number
+    delay: any
 }
 const Section = ({ children, delay = 0}: Props) => (
     <StyleDiv
         initial={{ y: 10, opacity: 0}}
         animate={{ y:0, opacity: 1}}
-        transition={{ duration: 0.8 , delay}}
+        transform={{ duration: "0.8", delay}}
         mb={6}
     >
         {children}
