@@ -100,8 +100,6 @@ const NavBar = (props : any) => {
                             display="inline-flex"
                             alignItems="center"
                             style={{ gap: 4}}
-
-                            
                     >
                         Posts
                     </LinkItem>
