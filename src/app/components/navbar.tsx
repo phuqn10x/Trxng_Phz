@@ -46,7 +46,71 @@ const LinkItem = ({ href, path, target, children, ...props} : PropsLinkItem , ) 
 const MenuLink = forwardRef<any, any>((props, ref) => (
   <Link ref={ref} as={NextLink} {...props} />
 ))
-const NavBar = () => {
+const NavBar = (props : any) => {
+    const { path } = props 
+    return (
+        <Box 
+        position= "fixed"
+        as="nav"
+        w="100%"
+        bg={useColorModeValue('#ffffff40', '#20202380')}
+        css={{ backdropFilter: 'blur(10px)'}}
+        zIndex={2}
+        {...props}
+        >
+            <Container 
+                display="flex"
+                p={2}
+                maxW="container.md"
+                wrap="wrap"
+                align="center"
+                justify="space-between"
+            >
+                <Flex align="center" mr={5}>
+                    <Heading as="h1" size="lg" letterSpacing={'tighter'}>
+                        <Logo />
+                    </Heading>
+                </Flex>
+
+                <Stack
+                    direction={{ base:'column', md: 'row'}}
+                    display={{ base: 'none' , md: 'flex'}}
+                    width={{ base: 'full' , md: 'auto'}}
+                    alignItems="center"
+                    flexGrow={1}
+                    mt={{ base: 4, md: 0}}
+                >
+                    <LinkItem href="/works" path={path}>
+                        Works
+                    </LinkItem>
+                    <LinkItem href="/wallpapers" path={path}>
+                        Wallpapers
+                    </LinkItem>
+                    <LinkItem href="/posts" path={path}>
+                        Posts
+                    </LinkItem>
+                    <LinkItem href="https://github.com/phuqn10x/Trxng_Phz"
+ path={path}>
+                        Works
+                    </LinkItem>
+                    <LinkItem 
+                            href="https://github.com/phuqn10x/Trxng_Phz" path={path}
+                            target='_blank'
+                            path={path}
+                            display="inline-flex"
+                            alignItems="center"
+                            style={{ gap: 4}}
+
+                            
+                    >
+                        Posts
+                    </LinkItem>
+                </Stack>
+
+
+            </Container>
+        </Box>
+    )
 
 }
 export default NavBar
