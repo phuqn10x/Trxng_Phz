@@ -19,10 +19,10 @@ import { HamburgerIcon} from '@chakra-ui/icons';
 import ThemeToggleButton from './theme-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
 interface PropsLinkItem{
-    href: string;
-    path: string;
-    target: string;
-    children: string;
+    href?: string;
+    path?: string;
+    target?: string;
+    children?: string;
 }
 const LinkItem = ({ href, path, target, children, ...props} : PropsLinkItem , ) => {
     const active = path === href
