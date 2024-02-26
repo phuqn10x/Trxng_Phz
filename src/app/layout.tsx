@@ -4,6 +4,8 @@ import "./globals.css";
 import { Providers } from './providers'
 import Layout from './components/layouts/main'
 import Fonts from './components/fonts'
+import Chakra from './components/chakra'
+import { cookies } from 'next/headers'
 // const inter = Jaldi({ subsets: ['devanagari'] , weight : ['400']});
 
 export const metadata: Metadata = {
@@ -12,17 +14,20 @@ export const metadata: Metadata = {
 };
 
 function RootLayout({ children }: Readonly<{ children: React.ReactNode;  }>) {
-  return (
+    const cookieStore = cookies()
+    const theme = cookieStore.get('theme')
+    console.log(theme)
+    return (
     <html lang="en">
       <body >
-        <Providers>
-          {/* <Fonts> */}
+        <Chakra cookies={theme}>
+           <Fonts />
             <Layout>
               {children}
             </Layout>
-          {/* </Fonts> */}
 
-        </Providers>
+
+        </Chakra>
       </body>
     </html>
   );

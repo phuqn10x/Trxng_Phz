@@ -13,10 +13,8 @@ import { log } from 'console'
 // })
 interface Props {
     children : React.ReactNode
-    router?: Router
 }
-const Main = ({ children, router}:Props) => {
-    console.log(router);
+const Main = ({ children }:Props) => {
     
     return (
         <Box as="main" pb={8}>
